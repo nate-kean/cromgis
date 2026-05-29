@@ -103,7 +103,10 @@ class Cromgis(commands.AutoShardedBot):
 				self.markov = cmarkov.ConvMark(parsed_sentences=json.load(f))
 
 	async def on_message(self, message: discord.Message) -> None:
-		if message.author.bot:  # this will catch webhooks as well iirc
+		# removed on purpose for more chaos
+		# if message.author.bot:  # this will catch webhooks as well iirc
+		# 	return
+		if message.author.id == self.user.id:
 			return
 		if self.user.mentioned_in(message) or random.random() < 0.0035:
 			# await message.channel.send(self.markov.generate())
