@@ -50,7 +50,7 @@ class Cromgis(commands.AutoShardedBot):
 			),
 			owner_ids=json.loads(os.environ["BOT_OWNERS"]),
 			case_insensitive=True,
-			allowed_mentions=discord.AllowedMentions.none(),
+			allowed_mentions=discord.AllowedMentions.all(),
 			activity=discord.Game(name="Forged in steel and fire"),
 			intents=intents,
 		)
